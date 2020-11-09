@@ -16,7 +16,6 @@ const GameBoard = () => {
             <G.Board>
                 {settlementList.map((settlement, index) => {
                     const settleClass = classNames(`set_${settlement.id}`, `${settlement.color}`);
-                    console.log(settleClass)
                     return(
                         <G.SettlementHouse
                         key={index}
@@ -25,6 +24,17 @@ const GameBoard = () => {
 
                         </G.SettlementHouse>
                         )
+                })}
+
+                {roadList.map((road, index) => {
+                    const roadClass = classNames(`road_${road.id}`, `${road.owner.color}`);
+                    console.log(roadClass)
+                    return(
+                        <G.RoadPiece
+                            key={index}
+                            className={roadClass}
+                            ></G.RoadPiece>
+                    )
                 })}
 
             </G.Board>

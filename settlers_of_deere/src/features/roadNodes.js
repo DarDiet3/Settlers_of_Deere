@@ -6,291 +6,579 @@ export const roadNodeSlice = createSlice({
         roads: [
             {
                 id: 1,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 2,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 3,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 4,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 5,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 6,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 7,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 8,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 9,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 10,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 11,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 12,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 13,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 14,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 15,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 16,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 17,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 18,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 19,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 20,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 21,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 22,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 23,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 24,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 25,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 26,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 27,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 28,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 29,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 30,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 31,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 32,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 33,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 34,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 35,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 36,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 37,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 38,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 39,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 40,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 41,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 42,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 43,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 44,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 45,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 46,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 47,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 48,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 49,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 50,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 51,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 52,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 53,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 54,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 55,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 56,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 57,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 58,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 59,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 60,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 61,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 62,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 63,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 64,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 65,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 66,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 67,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 68,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 69,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 70,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 71,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             },
             {
                 id: 72,
-                owner: null
+                owner: {
+                    color: "",
+                    id: "",
+                    username: ""
+                }
             }
         ]
     },
