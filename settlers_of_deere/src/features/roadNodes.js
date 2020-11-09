@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const roadNodeSlice = createSlice({
-    name: "roadNode",
+    name: "roadNodeSlice",
     initialState: {
         roads: [
             {
@@ -299,6 +299,6 @@ export const roadNodeSlice = createSlice({
     }
 })
 
-export const roads = state => state.roadNodeSlice.roads;
+export const roads = state => state.road.roads;
 
 export default roadNodeSlice.reducer;
