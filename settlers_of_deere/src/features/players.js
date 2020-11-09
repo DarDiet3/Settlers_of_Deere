@@ -16,17 +16,14 @@ export const playerSlice = createSlice({
                     wool: 0,
                     total: 0
                 },
-                player: 1,
-                color: "red",
-                username: null,
-                cards: {
-                    brick: 0,
-                    wood: 0,
-                    ore: 0,
-                    grain: 0, 
-                    wool: 0,
-                    total: 0
-                },
+                settlements_unplayed: 5,
+                settlements_played: 0, 
+                cities_unplayed: 4,
+                cities_played: 0,
+                roads_unplayed: 15,
+                roads_played: 0
+            },
+            {
                 player: 2,
                 color: "blue",
                 username: null,
@@ -38,6 +35,14 @@ export const playerSlice = createSlice({
                     wool: 0,
                     total: 0
                 },
+                settlements_unplayed: 5,
+                settlements_played: 0, 
+                cities_unplayed: 4,
+                cities_played: 0,
+                roads_unplayed: 15,
+                roads_played: 0
+            }, 
+            {
                 player: 3,
                 color: "orange",
                 username: null,
@@ -49,6 +54,14 @@ export const playerSlice = createSlice({
                     wool: 0,
                     total: 0
                 },
+                settlements_unplayed: 5,
+                settlements_played: 0, 
+                cities_unplayed: 4,
+                cities_played: 0,
+                roads_unplayed: 15,
+                roads_played: 0
+            }, 
+            {
                 player: 4,
                 color: "white",
                 username: null,
@@ -59,8 +72,13 @@ export const playerSlice = createSlice({
                     grain: 0, 
                     wool: 0,
                     total: 0
-                }
-
+                },
+                settlements_unplayed: 5,
+                settlements_played: 0, 
+                cities_unplayed: 4,
+                cities_played: 0,
+                roads_unplayed: 15,
+                roads_played: 0
             }
         ]
     },
