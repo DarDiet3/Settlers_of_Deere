@@ -62,7 +62,7 @@ export const Board = styled.div`
         grid-row: 14;
     }
 
-    & .road_34, .road_35, .road_36, .road_37, .road_38, .road_39, .token_8, .token_9, .token_10, .token_11, .hex_8, .hex_9, .hex_19, .hex_10, .hex_11{
+    & .road_34, .road_35, .road_36, .road_37, .road_38, .road_39, .token_8, .token_9, .token_10, .token_11, .token_19, .hex_8, .hex_9, .hex_19, .hex_10, .hex_11{
         grid-row: 17;
     }
 
@@ -156,7 +156,7 @@ export const Board = styled.div`
         grid-column: 10;
     }
 
-    & .set_2, .set_14, .set_19, .set_36, .set_41, .set_53, .road_21, .road_52, .token_2, .token_17, .hex_2, .hex_17, .hex_19 {
+    & .set_2, .set_14, .set_19, .set_36, .set_41, .set_53, .road_21, .road_52, .token_2, .token_17, .token_19, .hex_2, .hex_17, .hex_19 {
         grid-column: 11;
     }
 
@@ -248,12 +248,14 @@ export const NumberToken = styled.div`
     color: green;
     align-items: center;
     justify-content: center;
+    z-index: 1;
 
 `
 
 export const StyledHex = {
     fill: "yellow",
     strokeWidth: "25",
+    stroke: "green"
 
 }
     
