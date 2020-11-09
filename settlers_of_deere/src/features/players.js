@@ -11,9 +11,9 @@ export const playerSlice = createSlice({
                 cards: {
                     brick: 0,
                     wood: 0,
-                    ore: 0,
-                    grain: 0, 
-                    wool: 0,
+                    rock: 0,
+                    wheat: 0, 
+                    sheep: 0,
                     total: 0
                 },
                 settlements_unplayed: 5,
@@ -30,9 +30,9 @@ export const playerSlice = createSlice({
                 cards: {
                     brick: 0,
                     wood: 0,
-                    ore: 0,
-                    grain: 0, 
-                    wool: 0,
+                    rock: 0,
+                    wheat: 0, 
+                    sheep: 0,
                     total: 0
                 },
                 settlements_unplayed: 5,
@@ -49,9 +49,9 @@ export const playerSlice = createSlice({
                 cards: {
                     brick: 0,
                     wood: 0,
-                    ore: 0,
-                    grain: 0, 
-                    wool: 0,
+                    rock: 0,
+                    wheat: 0, 
+                    sheep: 0,
                     total: 0
                 },
                 settlements_unplayed: 5,
@@ -68,9 +68,9 @@ export const playerSlice = createSlice({
                 cards: {
                     brick: 0,
                     wood: 0,
-                    ore: 0,
-                    grain: 0, 
-                    wool: 0,
+                    rock: 0,
+                    wheat: 0, 
+                    sheep: 0,
                     total: 0
                 },
                 settlements_unplayed: 5,

@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
+import Hexagon from "react-hexagon";
 import classNames from "classnames";
 import { useSelector, useDispatch} from 'react-redux';
 import * as G from "../styles/GameBoardStyles";
 import { settlements } from "../features/settlementNodeSlice";
 import { roads } from "../features/roadNodes";
-import { dice, tokens, setDice, setTokens } from "../features/gameMetaDataSlice";
+import { dice, tokens, resource_hexes, setDice, setTokens, setResourceHexes } from "../features/gameMetaDataSlice";
+import { hexes, setNumber, setResource, setRobber } from "../features/hexSlice";
 
 const GameBoard = () => {
     //State Variables
@@ -12,12 +14,17 @@ const GameBoard = () => {
     const settlementList = useSelector(settlements);
     const roadList = useSelector(roads);
     let tokenList = useSelector(tokens);
-    
+    const hexList = useSelector(hexes);
+    const resourceHexList = useSelector(resource_hexes);
+    const hexStyles = G.StyledHex;
     // Set up initial game states
     useEffect(() => {
         let newTokenList = [...tokenList];
         newTokenList = shuffle(newTokenList);
+        let newResourceHexList = [...resourceHexList];
+        newResourceHexList = shuffle(newResourceHexList);
         dispatch(setTokens(newTokenList));
+        dispatch(setResourceHexes(newResourceHexList));
     }, [])
 
 
@@ -38,10 +45,21 @@ const GameBoard = () => {
     // const newTokenList = shuffle(tokenList)
     // console.log(`tokenList: ${tokenList}`)
     // console.log(`newTokenList: ${newTokenList}`)
-    
+    console.log(hexStyles)
+    console.log("donEEEEEE")
     return(
         <G.Div>
             <G.Board>
+                {hexList.map((hex, index) => {
+                    const hexClass = classNames(`hex_${hex.id}`, `${hex.resource}`, "hex");
+                    return(
+                        <Hexagon
+                            key={index}
+                            className={hexClass}
+                            style={hexStyles}
+                            ></Hexagon>
+                    )
+                })}
                 {settlementList.map((settlement, index) => {
                     const settleClass = classNames(`set_${settlement.id}`, `${settlement.color}`);
                     return(
@@ -63,6 +81,8 @@ const GameBoard = () => {
                             ></G.RoadPiece>
                     )
                 })}
+
+                
 
                 {tokenList.map((token, index) => {
                     const tokenClass = classNames(`token_${tokenIndex}`, "token")

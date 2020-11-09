@@ -1,4 +1,6 @@
+import Hexagon from "react-hexagon";
 import styled from "styled-components";
+
 
 export const Div = styled.div`
     display: flex;
@@ -32,7 +34,7 @@ export const Board = styled.div`
         grid-row: 3;
     }
 
-    & .road_7, .road_8, .road_9, .road_10, .token_1, .token_2, .token_3{
+    & .road_7, .road_8, .road_9, .road_10, .token_1, .token_2, .token_3, .hex_1, .hex_2, .hex_3{
         grid-row: 5;
     }
 
@@ -48,7 +50,7 @@ export const Board = styled.div`
         grid-row: 9;
     }
 
-    & .road_19, .road_20, .road_21, .road_22, .road_23, .token_4, .token_5, .token_6, .token_7{
+    & .road_19, .road_20, .road_21, .road_22, .road_23, .token_4, .token_5, .token_6, .token_7, .hex_4, .hex_5, .hex_6, .hex_7{
         grid-row: 11;
     }
 
@@ -60,7 +62,7 @@ export const Board = styled.div`
         grid-row: 14;
     }
 
-    & .road_34, .road_35, .road_36, .road_37, .road_38, .road_39, .token_8, .token_9, .token_10, .token_11{
+    & .road_34, .road_35, .road_36, .road_37, .road_38, .road_39, .token_8, .token_9, .token_10, .token_11, .hex_8, .hex_9, .hex_19, .hex_10, .hex_11{
         grid-row: 17;
     }
 
@@ -80,7 +82,7 @@ export const Board = styled.div`
         grid-row: 21;
     }
 
-    & .road_50, .road_51, .road_52, .road_53, .road_54, .token_12, .token_13, .token_14, .token_15{
+    & .road_50, .road_51, .road_52, .road_53, .road_54, .token_12, .token_13, .token_14, .token_15, .hex_12, .hex_13, .hex_14, .hex_15{
         grid-row: 23;
     }
 
@@ -96,7 +98,7 @@ export const Board = styled.div`
         grid-row: 27;
     }
 
-    & .road_63, .road_64, .road_65, .road_66, .token_16, .token_17, .token_18{
+    & .road_63, .road_64, .road_65, .road_66, .token_16, .token_17, .token_18, .hex_16, .hex_17, .hex_18{
         grid-row: 29;
     }
 
@@ -122,7 +124,7 @@ export const Board = styled.div`
         grid-column: 2;
     }
 
-    & .set_12, .set_17, .set_34, .set_39, .road_19, .road_50, .token_8 {
+    & .set_12, .set_17, .set_34, .set_39, .road_19, .road_50, .token_8, .hex_8 {
         grid-column: 3;
     }
 
@@ -130,7 +132,7 @@ export const Board = styled.div`
         grid-column: 4;
     }
 
-    & .set_4, .set_8, .set_23, .set_29, .set_44, .set_48, .road_7, .road_35, .road_63, .token_4, .token_12 {
+    & .set_4, .set_8, .set_23, .set_29, .set_44, .set_48, .road_7, .road_35, .road_63, .token_4, .token_12, .hex_4, .hex_12 {
         grid-column: 5;
     }
 
@@ -138,7 +140,7 @@ export const Board = styled.div`
         grid-column: 6;
     }
 
-    & .set_1, .set_13, .set_18, .set_35, .set_40, .set_52, .road_20, .road_51, .token_1, .token_9, .token_16 {
+    & .set_1, .set_13, .set_18, .set_35, .set_40, .set_52, .road_20, .road_51, .token_1, .token_9, .token_16, .hex_1, .hex_9, .hex_16 {
         grid-column: 7;
     }
 
@@ -146,7 +148,7 @@ export const Board = styled.div`
         grid-column: 8;
     }
 
-    & .set_5, .set_9, .set_24, .set_30, .set_45, .set_49, .road_8, .road_36, .road_64, .token_5, .token_13 {
+    & .set_5, .set_9, .set_24, .set_30, .set_45, .set_49, .road_8, .road_36, .road_64, .token_5, .token_13, .hex_5, .hex_13 {
         grid-column: 9;
     }
 
@@ -154,7 +156,7 @@ export const Board = styled.div`
         grid-column: 10;
     }
 
-    & .set_2, .set_14, .set_19, .set_36, .set_41, .set_53, .road_21, .road_52, .token_2, .token_17 {
+    & .set_2, .set_14, .set_19, .set_36, .set_41, .set_53, .road_21, .road_52, .token_2, .token_17, .hex_2, .hex_17, .hex_19 {
         grid-column: 11;
     }
 
@@ -162,7 +164,7 @@ export const Board = styled.div`
         grid-column: 12;
     }
 
-    & .set_6, .set_10, .set_25, .set_31, .set_46, .set_50, .road_9, .road_37, .road_65, .token_6, .token_14 {
+    & .set_6, .set_10, .set_25, .set_31, .set_46, .set_50, .road_9, .road_37, .road_65, .token_6, .token_14, .hex_6, .hex_14 {
         grid-column: 13;
     }
 
@@ -170,7 +172,7 @@ export const Board = styled.div`
         grid-column: 14;
     }
 
-    & .set_3, .set_15, .set_20, .set_37, .set_42, .set_54, .road_22, .road_53, .token_3, .token_10, .token_18 {
+    & .set_3, .set_15, .set_20, .set_37, .set_42, .set_54, .road_22, .road_53, .token_3, .token_10, .token_18, .hex_3, .hex_10, .hex_18 {
         grid-column: 15;
     }
 
@@ -178,7 +180,7 @@ export const Board = styled.div`
         grid-column: 16;
     }
 
-    & .set_7, .set_11, .set_26, .set_32, .set_47, .set_51, .road_10, .road_38, .road_66, .token_7, .token_15 {
+    & .set_7, .set_11, .set_26, .set_32, .set_47, .set_51, .road_10, .road_38, .road_66, .token_7, .token_15, .hex_7, .hex_15 {
         grid-column: 17;
     }
 
@@ -186,7 +188,7 @@ export const Board = styled.div`
         grid-column: 18;
     }
 
-    & .set_16, .set_21, .set_38, .set_43 , .road_23, .road_54, .token_11{
+    & .set_16, .set_21, .set_38, .set_43 , .road_23, .road_54, .token_11, .hex_11{
         grid-column: 19;
     }
 
@@ -217,6 +219,11 @@ export const Board = styled.div`
         justify-self: center;
         align-self: center;
     }
+    & .hex {
+        width: 925%;
+        justify-self: center;
+        align-self: center;
+    }
 `
 
 export const SettlementHouse = styled.div`
@@ -243,4 +250,11 @@ export const NumberToken = styled.div`
     justify-content: center;
 
 `
+
+export const StyledHex = {
+    fill: "yellow",
+    strokeWidth: "25",
+
+}
+    
 
