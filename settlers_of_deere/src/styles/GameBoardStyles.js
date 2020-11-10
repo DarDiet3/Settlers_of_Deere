@@ -259,4 +259,11 @@ export const StyledHex = {
 
 }
     
+export const Dice = styled.div`
+    width: 75px;
+    height: 75px;
+    color: yellow;
+    background: green;
+    border-radius: 4px;
+`
 

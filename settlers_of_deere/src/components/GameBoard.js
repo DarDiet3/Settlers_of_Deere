@@ -5,7 +5,7 @@ import { useSelector, useDispatch} from 'react-redux';
 import * as G from "../styles/GameBoardStyles";
 import { settlements } from "../features/settlementNodeSlice";
 import { roads } from "../features/roadNodes";
-import { dice, tokens, resource_hexes, setDice, setTokens, setResourceHexes } from "../features/gameMetaDataSlice";
+import { dice, tokens, resource_hexes, setDice, setTokens, setResourceHexes, rollDice } from "../features/gameMetaDataSlice";
 import { hexes, setNumber, setResource, setRobber } from "../features/hexSlice";
 
 const GameBoard = () => {
@@ -16,7 +16,9 @@ const GameBoard = () => {
     let tokenList = useSelector(tokens);
     const hexList = useSelector(hexes);
     const resourceHexList = useSelector(resource_hexes);
+    const diceSet = useSelector(dice);
     const hexStyles = G.StyledHex;
+
     // Set up initial game states
     useEffect(() => {
         let newTokenList = [...tokenList];
@@ -29,7 +31,6 @@ const GameBoard = () => {
 
 
     const shuffle = (arr) => {
-        console.log(arr)
         let oldArr = arr;
         let newArr = [];
         let i = oldArr.length;
@@ -41,11 +42,18 @@ const GameBoard = () => {
         } 
         return newArr
     }
+
     let tokenIndex = 1;
     let robberClass = classNames("token_19", "token", "robber");
-
-    console.log(hexStyles)
-    console.log("donEEEEEE")
+    
+    const roll = () => {
+        const dice1 = Math.floor(Math.random() * 7 );
+        const dice2 = Math.floor(Math.random() * 7 );
+        let newDice = [dice1, dice2]
+        console.log(newDice)
+        dispatch(setDice(newDice))
+    }
+ 
     return(
         <G.Div>
             <G.Board>
