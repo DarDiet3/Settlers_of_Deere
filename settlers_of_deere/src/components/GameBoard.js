@@ -27,6 +27,7 @@ const GameBoard = () => {
         newResourceHexList = shuffle(newResourceHexList);
         dispatch(setTokens(newTokenList));
         dispatch(setResourceHexes(newResourceHexList));
+        
     }, [])
 
 
@@ -110,8 +111,8 @@ const GameBoard = () => {
                 }
                 </G.NumberToken>
                 <G.DieHolder className="dieHolder">
-                <G.Dice className="dice1">{diceSet[0]}</G.Dice>
-                <G.Dice className="dice2">{diceSet[1]}</G.Dice>
+                    <G.Dice className="dice1">{diceSet[0]}</G.Dice>
+                    <G.Dice className="dice2">{diceSet[1]}</G.Dice>
                     <G.Button className="roll" onClick={() => roll()}>Roll!</G.Button>
                 </G.DieHolder>
             </G.Board>
