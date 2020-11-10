@@ -6,7 +6,7 @@ import * as G from "../styles/GameBoardStyles";
 import { settlements } from "../features/settlementNodeSlice";
 import { roads } from "../features/roadNodes";
 import { dice, tokens, resource_hexes, setDice, setTokens, setResourceHexes, rollDice } from "../features/gameMetaDataSlice";
-import { hexes, setNumber, setResource, setRobber } from "../features/hexSlice";
+import { hexes, setHexData, setRobber } from "../features/hexSlice";
 
 const GameBoard = () => {
     //State Variables
@@ -27,7 +27,15 @@ const GameBoard = () => {
         newResourceHexList = shuffle(newResourceHexList);
         dispatch(setTokens(newTokenList));
         dispatch(setResourceHexes(newResourceHexList));
-        
+        for(let i=0; i < newTokenList.length; i++) {
+            let payload = {
+                index: i,
+                number: newTokenList[i],
+                resource: newResourceHexList[i]
+            }
+            dispatch(setHexData(payload))
+        }
+
     }, [])
 
 
