@@ -11,18 +11,15 @@ export const gameMetaDataSlice = createSlice({
     reducers: {
         setDice: (state, action) => {
             state.dice = action.payload;
+            const sum = action.payload[0] + action.payload[1];
+            state.dice_total = sum;
         },
         setTokens: (state, action) => {
             state.number_tokens = action.payload;
         }, 
         setResourceHexes: (state, action) => {
             state.resource_hexes = action.payload;
-        },
-        // rollDice: (state) => {
-        //     const dice1 = Math.floor(Math.random() * 7 ) + 1;
-        //     const dice2 = Math.floor(Math.random() * 7 ) + 1;
-        //     return [dice1, dice2]
-        // }
+        }
     }
 })
 

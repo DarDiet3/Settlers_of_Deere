@@ -224,6 +224,11 @@ export const Board = styled.div`
         justify-self: center;
         align-self: center;
     }
+    & .dieHolder {
+        grid-row: 2 / span 5;
+        grid-column: 1 / span 4;
+    }
+
 `
 
 export const SettlementHouse = styled.div`
@@ -258,12 +263,29 @@ export const StyledHex = {
     stroke: "green"
 
 }
-    
+  
+export const DieHolder = styled.div`
+    border: navy solid 2px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+
+
+`
 export const Dice = styled.div`
-    width: 75px;
-    height: 75px;
+    display: flex;
+    width: 25px;
+    height: 25px;
     color: yellow;
     background: green;
     border-radius: 4px;
+    justify-content: center;
+    align-items: center;
 `
 
+export const Button = styled.button`
+    width: 75%;
+    height: 25%;
+
+`
