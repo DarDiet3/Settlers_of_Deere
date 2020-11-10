@@ -17,7 +17,6 @@ const GameBoard = () => {
     const hexList = useSelector(hexes);
     const resourceHexList = useSelector(resource_hexes);
     const diceSet = useSelector(dice);
-    const hexStyles = G.StyledHex;
 
     // Set up initial game states
     useEffect(() => {
@@ -68,10 +67,20 @@ const GameBoard = () => {
             <G.Board>
                 {hexList.map((hex, index) => {
                     const hexClass = classNames(`hex_${hex.id}`, `${hex.resource}`, "hex");
+                    const hexStyles = {
+                        strokeWidth: "25",
+                        stroke: "green",
+                        fill: hex.resource === "wheat" ? "tan" : 
+                            hex.resource === "brick" ? "red" :
+                            hex.resource === "wood" ? "brown" :
+                            hex.resource === "rock" ? "darkgray" : 
+                            hex.resource === "sheep" ? "white" : "yellow"
+                    }
                     return(
                         <Hexagon
                             key={index}
                             className={hexClass}
+                            hexProps={{class:`${hex.resource}`}}
                             style={hexStyles}
                             ></Hexagon>
                     )
