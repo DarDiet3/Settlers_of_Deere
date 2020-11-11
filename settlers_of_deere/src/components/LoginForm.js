@@ -10,7 +10,7 @@ const LoginForm = () => {
         switch (action.type) {
             case "NAME_CHANGED":
                 return {...state, name: action.payload};
-            case "EMAIL_CHAGED":
+            case "EMAIL_CHANGED":
                 return {...state, email: action.payload};
             case "USERNAME_CHANGED":
                 return {...state, username: action.payload};
@@ -44,30 +44,34 @@ const LoginForm = () => {
 
 
     return(
-        <form onSubmit={(e) => HandleSignup(e, this.state)}>
+        <form onSubmit={(e) => HandleSignup(e, enterUser)}>
             <input
                 type="text"
                 name="name"
                 value={enterUser.name}
                 onChange={e => setEnterUser({type: "NAME_CHANGED", payload: e.target.value})}
+                placeholder="Name"
             />
             <input
                 type="text"
                 name="email"
                 value={enterUser.email}
                 onChange={e => setEnterUser({type: "EMAIL_CHANGED", payload: e.target.value})}
+                placeholder="Email"
             />
             <input
                 type="text"
                 name="username"
                 value={enterUser.username}
                 onChange={e => setEnterUser({type: "USERNAME_CHANGED", payload: e.target.value})}
+                placeholder="username"
             />
             <input 
                 type="password"
                 name="passowrd"
                 value={enterUser.password}
                 onChange={e => setEnterUser({type: "PASSWORD_CHANGED", payload: e.target.value})}
+                placeholder="password"
             />
             <input type="submit" value="Sign Up" />
         </form>

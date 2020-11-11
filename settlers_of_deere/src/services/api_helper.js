@@ -7,14 +7,14 @@ const api = axios.create({
 // ===== AUTH ======
 
 export const signupUser = async (signupData) => {
-    const resp = await api.post("auth/singUp", signupData);
+    const resp = await api.post("/auth/signup", signupData);
     localStorage.setItem('authToken', resp.data.token);
     api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
     return resp.data.user;
 }
 
 export const loginUser = async (loginData) => {
-    const resp = await api.post("auth/login", loginData);
+    const resp = await api.post("/auth/login", loginData);
     localStorage.setItem("authToken", resp.data.token);
     api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
     return resp.data.user;
@@ -23,9 +23,9 @@ export const loginUser = async (loginData) => {
 export const verifyUser = async () => {
     const token = localStorage.getItem("authToken");
 
-    if(toke) {
+    if(token) {
         api.defaults.headers.common.authorization = `Bearer ${token}`;
-        const resp = await api.get("auth/verify");
+        const resp = await api.get("/auth/verify");
         return resp.data
     }
     return false;
