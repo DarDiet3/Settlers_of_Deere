@@ -16,13 +16,10 @@ export const signupUser = async (signupData) => {
 }
 
 export const loginUser = async (loginData) => {
-    console.log(1)
     const resp = await api.post("/auth/login", loginData);
-    console.log(2)
     localStorage.setItem("authToken", resp.data.token);
-    console.log(3)
+    localStorage.setItem("currentUserId", JSON.stringify(resp.data.user));
     api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
-    console.log(4)
     return resp.data.user;
 }
 

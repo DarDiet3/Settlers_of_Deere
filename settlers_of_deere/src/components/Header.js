@@ -4,10 +4,11 @@ import * as H from "../styles/GeneralStyles";
 import { Link } from "react-router-dom";
 import { currentUser } from "../features/gameMetaDataSlice";
 
-const activeUser = useSelector(currentUser);
-console.log(activeUser)
+
 
 const Header = () => {
+    const activeUser = useSelector(currentUser);
+    console.log(activeUser)
     return (
         <H.Header>
             <H.NavBar>
@@ -25,3 +26,5 @@ const Header = () => {
         </H.Header>
     )
 }
+
+export default Header;
