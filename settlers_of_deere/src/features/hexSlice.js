@@ -120,12 +120,13 @@ export const hexSlice = createSlice({
             }
         ]
     },
-    reducers: {
-        setNumber: (state, action) => {
-            state.number = action.payload;
-        }, 
-        setResource: (state, action) => {
-            state.resource = action.payload;
+    reducers: { 
+        setHexData: (state, action) => {
+            console.log(action.payload)
+            console.log(state.hex_list[action.payload.index].id)
+            let data = action.payload;
+            state.hex_list[data.index].number = data.number;
+            state.hex_list[data.index].resource = data.resource;
         }, 
         setRobber: (state, action) => {
             state.robber = !state.robber
@@ -133,7 +134,7 @@ export const hexSlice = createSlice({
     }
 })
 
-export const { setNumber } = hexSlice.actions;
+export const { setHexData, setRobber } = hexSlice.actions;
 
 export const hexes = state => state.hexes.hex_list;
 

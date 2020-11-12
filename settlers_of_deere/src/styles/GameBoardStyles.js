@@ -2,6 +2,7 @@ import Hexagon from "react-hexagon";
 import styled from "styled-components";
 
 
+
 export const Div = styled.div`
     display: flex;
     width: 100%;
@@ -19,7 +20,7 @@ export const Board = styled.div`
     grid-template-columns: repeat(21, minmax(0, 2.25%));
     grid-template-rows: repeat(33, minmax(0, 2.25%));
     gap: .875% 2.75%;
-    background: white;
+    background: lightblue;
     
 
     & .set_1, .set_2, .set3 {
@@ -224,6 +225,10 @@ export const Board = styled.div`
         justify-self: center;
         align-self: center;
     }
+    & .dieHolder {
+        grid-row: 2 / span 5;
+        grid-column: 1 / span 4;
+    }
 `
 
 export const SettlementHouse = styled.div`
@@ -251,12 +256,29 @@ export const NumberToken = styled.div`
     z-index: 1;
 
 `
+  
+export const DieHolder = styled.div`
+    border: navy solid 2px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
 
-export const StyledHex = {
-    fill: "yellow",
-    strokeWidth: "25",
-    stroke: "green"
 
-}
-    
 
+`
+export const Dice = styled.div`
+    display: flex;
+    width: 25px;
+    height: 25px;
+    color: yellow;
+    background: green;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+`
+
+export const Button = styled.button`
+    width: 75%;
+    height: 25%;
+
+`
