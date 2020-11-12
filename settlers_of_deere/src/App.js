@@ -11,15 +11,17 @@ import LandingPage from './components/LandingPage';
 
 function App() {
   const activeUser = useSelector(currentUser);
+  const dispatch = useDispatch();
 
   const HandleLogout = () => {
     localStorage.removeItem('authToken');
-    useDispatch(setCurrentUser(""));
+    localStorage.removeItem("currentUserId");
+    dispatch(setCurrentUser(""));
 }
 
   return (
     <div className="App">
-      <button onclick={HandleLogout}>LogOut</button>
+      <button onClick={HandleLogout}>LogOut</button>
       {activeUser ? 
 
         <Gameboard/>

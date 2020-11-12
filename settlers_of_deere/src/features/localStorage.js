@@ -1,4 +1,4 @@
-export const loadState = () => {
+export const loadUser = () => {
     try {
         const serializedToken = localStorage.getItem("authToken");
         if (serializedToken === null ) {

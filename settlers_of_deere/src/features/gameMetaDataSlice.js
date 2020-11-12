@@ -1,5 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const currentUserId = () => {
+    try {
+        const serializedUser = localStorage.getItem("currentUserId");
+        if (serializedUser === null ) {
+            return undefined;
+        }
+        return JSON.parse(serializedUser);
+    } catch(err) {
+        return undefined;
+    }
+}
+
+const currentUserData = currentUserId();
+console.log(currentUserData)
+
 export const gameMetaDataSlice = createSlice({
     name: "gameMetaData",
     initialState: {
@@ -7,7 +22,7 @@ export const gameMetaDataSlice = createSlice({
         dice_total: 2,
         number_tokens: [2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10 ,10, 11, 11, 12],
         resource_hexes: ["brick", "brick", "brick", "wood", "wood", "wood", "wood", "rock", "rock", "rock", "wheat", "wheat", "wheat", "wheat", "sheep", "sheep", "sheep", "sheep"],
-        currentUser: null
+        currentUser: currentUserData
     },
     reducers: {
         setDice: (state, action) => {
