@@ -1,24 +1,33 @@
 import { Redirect, Route, Switch } from 'react-router';
 import { useSelector, useDispatch} from 'react-redux';
 
-import {currentUser, setCurrentUser} from "./features/gameMetaDataSlice";
+import {currentUser, setCurrentUser, gameData} from "./features/gameMetaDataSlice";
 import Gameboard from "./components/GameBoard";
-import LoginForm from "./components/SignUpForm"; 
+import SignupForm from "./components/SignUpForm"; 
+import LoginForm from "./components/LoginForm";
 import { signupUser, loginUser, VerifyUser} from "./services/api_helper";
 import LandingPage from './components/LandingPage';
 
 
 function App() {
-  console.log(currentUser ? "yes" : "no")
+  const activeUser = useSelector(currentUser);
+
+  const HandleLogout = () => {
+    localStorage.removeItem('authToken');
+    useDispatch(setCurrentUser(""));
+}
+
   return (
     <div className="App">
-      {currentUser ? 
+      <button onclick={HandleLogout}>LogOut</button>
+      {activeUser ? 
 
         <Gameboard/>
         :
         <div>
           <Route exact path="/" component={LandingPage}/>
-          <Route path="/signup" component={LoginForm}/>
+          <Route path="/signup" component={SignupForm}/>
+          <Route path="/login" component={LoginForm}/>
         </div>
     }
     </div>

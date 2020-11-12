@@ -4,6 +4,7 @@ import { roadNodeSlice } from "../features/roadNodes";
 import { settlementNodeSlice} from "../features/settlementNodeSlice";
 import { gameMetaDataSlice } from "../features/gameMetaDataSlice";
 import { hexSlice } from "../features/hexSlice";
+import { loadState, saveToken } from "../features/localStorage";
 
 export default configureStore({
     reducer: {
@@ -13,4 +14,6 @@ export default configureStore({
         gameData: gameMetaDataSlice.reducer,
         hexes: hexSlice.reducer
     }
+
+
 });

@@ -1,11 +1,11 @@
 import React, { useReducer } from "react";
 import { useDispatch} from "react-redux";
-import { usedHistory, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { signupUser, loginUser, VerifyUser} from "../services/api_helper";
 import { currentUser, setCurrentUser} from "../features/gameMetaDataSlice";
 import * as L from "../styles/LandingPageStyles";
 
-const LoginForm = () => {
+const SignupForm = () => {
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -39,7 +39,7 @@ const LoginForm = () => {
         const currentUser = await signupUser(signupData);
         console.log(currentUser)
         dispatch(setCurrentUser(currentUser));
-        history.push("/")
+        history.push("/") //TODO: Redirect to profile
     }
     
     const HandleLogout = () => {
@@ -89,4 +89,4 @@ const LoginForm = () => {
     )
 }
 
-export default LoginForm;
+export default SignupForm;
