@@ -15,6 +15,7 @@ function App() {
 
   const HandleLogout = () => {
     localStorage.removeItem('authToken');
+    localStorage.removeItem("currentUserId");
     dispatch(setCurrentUser(""));
 }
 
