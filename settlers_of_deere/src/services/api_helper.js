@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://localhost:3001"
+    baseURL: "http://localhost:3001" //https://settlers-of-deere.herokuapp.com/
 })
 
 // ===== AUTH ======
@@ -16,13 +16,10 @@ export const signupUser = async (signupData) => {
 }
 
 export const loginUser = async (loginData) => {
-    console.log(1)
     const resp = await api.post("/auth/login", loginData);
-    console.log(2)
     localStorage.setItem("authToken", resp.data.token);
-    console.log(3)
+    localStorage.setItem("currentUserId", JSON.stringify(resp.data.user));
     api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
-    console.log(4)
     return resp.data.user;
 }
 
@@ -35,4 +32,31 @@ export const verifyUser = async () => {
         return resp.data
     }
     return false;
+}
+
+//====== USER DATA =======
+
+export const userData = async () => {
+    const resp = await api.get("/user/profile");
+    return resp.data
+}
+
+export const userProfileData = async (user) => {
+    const resp = await api.get(`/profile/${user.id}`);
+    return resp.data
+}
+
+export const updateUser = async (user, userContent) => {
+    const resp = await api.put(`/user/profile/${user.id}`, userContent)
+    return resp.data
+}
+
+export const updateProfile = async (user, profileContent) => {
+    const resp = await api.put(`/profile/${user.id}`, profileContent);
+    return resp.data
+}
+
+export const deleteUser = async (user) => {
+    const resp = await api.delete(`/profile/${user.id}`)
+    return resp.data
 }

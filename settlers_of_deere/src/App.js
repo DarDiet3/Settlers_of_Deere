@@ -5,8 +5,8 @@ import {currentUser, setCurrentUser, gameData} from "./features/gameMetaDataSlic
 import Gameboard from "./components/GameBoard";
 import SignupForm from "./components/SignUpForm"; 
 import LoginForm from "./components/LoginForm";
-import { signupUser, loginUser, VerifyUser} from "./services/api_helper";
 import LandingPage from './components/LandingPage';
+import Profile from "./components/Profile";
 
 
 function App() {
@@ -23,8 +23,11 @@ function App() {
     <div className="App">
       <button onClick={HandleLogout}>LogOut</button>
       {activeUser ? 
-
-        <Gameboard/>
+        <Switch>
+          <Route exact path="/" component={Gameboard}/>
+          <Route path="/profile" component={Profile}/>
+        </Switch>
+        
         :
         <div>
           <Route exact path="/" component={LandingPage}/>
