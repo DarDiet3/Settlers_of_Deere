@@ -45,3 +45,11 @@ export const userProfileData = async (user) => {
     const resp = await api.get(`/profile/${user.id}`);
     return resp.data
 }
+
+export const updateUser = async (user, userContent) => {
+    const resp = await api.put(`/user/profile/${user.id}`, userContent)
+}
+
+export const updateProfile = async (user, profileContent) => {
+    const resp = await api.put(`/profile/${user.id}`, profileContent);
+}
