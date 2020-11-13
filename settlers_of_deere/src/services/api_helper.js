@@ -33,3 +33,15 @@ export const verifyUser = async () => {
     }
     return false;
 }
+
+//====== USER DATA =======
+
+export const userData = async () => {
+    const resp = await api.get("/user/profile");
+    return resp.data
+}
+
+export const userProfileData = async (user) => {
+    const resp = await api.get(`/profile/${user.id}`);
+    return resp.data
+}

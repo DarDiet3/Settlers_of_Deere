@@ -8,7 +8,6 @@ import { currentUser } from "../features/gameMetaDataSlice";
 
 const Header = () => {
     const activeUser = useSelector(currentUser);
-    console.log(activeUser)
     return (
         <H.Header>
             <H.NavBar>
