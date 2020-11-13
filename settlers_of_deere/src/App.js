@@ -8,6 +8,7 @@ import SignupForm from "./components/SignUpForm";
 import LoginForm from "./components/LoginForm";
 import LandingPage from './components/LandingPage';
 import Profile from "./components/Profile";
+import * as P from "./styles/ProfileStyles";
 
 
 function App() {
@@ -25,8 +26,8 @@ function App() {
 }
 
   return (
-    <div className="App">
-      <button onClick={HandleLogout}>LogOut</button>
+    <P.BodyContainer className="App">
+      {/* <button onClick={HandleLogout}>LogOut</button> */}
       {activeUser ? 
         <Switch>
           <Route exact path="/" component={Gameboard}/>
@@ -40,7 +41,7 @@ function App() {
           <Route path="/login" component={LoginForm}/>
         </div>
     }
-    </div>
+    </P.BodyContainer>
   );
 }
 

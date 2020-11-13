@@ -1,10 +1,10 @@
-import Hexagon from "react-hexagon";
 import styled from "styled-components";
 
 
 
 export const Div = styled.div`
     display: flex;
+    flex-direction: column;
     width: 100%;
     height: 85vh;
     background: gray;
@@ -266,6 +266,7 @@ export const DieHolder = styled.div`
 
 
 `
+
 export const Dice = styled.div`
     display: flex;
     width: 25px;

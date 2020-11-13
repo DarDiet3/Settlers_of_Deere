@@ -66,9 +66,9 @@ const Profile = () => {
 
     return (
         profileData.userProfile ? 
-        <div>
+        <P.BodyContainer>
             <Route exact path="/profile" render={() => (
-                <div>
+                <P.BodyContainer>
                 <Header/>
                     <P.Div>
                         <P.SubBox>
@@ -116,11 +116,11 @@ const Profile = () => {
                         </P.SubBox>
                         
                     </P.Div>
-                </div>
+                </P.BodyContainer>
                 
             )} />
             <Route path="/profile/edit" component={EditProfile}/>
-        </div> 
+        </P.BodyContainer> 
         :
         <div></div>
     )

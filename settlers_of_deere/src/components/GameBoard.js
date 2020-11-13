@@ -3,6 +3,8 @@ import Hexagon from "react-hexagon";
 import classNames from "classnames";
 import { useSelector, useDispatch} from 'react-redux';
 import * as G from "../styles/GameBoardStyles";
+import * as H from "../styles/GeneralStyles";
+import Header from "./Header";
 import { settlements } from "../features/settlementNodeSlice";
 import { roads } from "../features/roadNodes";
 import { dice, tokens, resource_hexes, setDice, setTokens, setResourceHexes, rollDice } from "../features/gameMetaDataSlice";
@@ -80,78 +82,82 @@ const GameBoard = () => {
     }
  
     return(
-        <G.Div>
-            <G.StartButton onClick={() => setBoard()}>Set Board</G.StartButton>
-            <G.Board>
-                {hexList.map((hex, index) => {
-                    const hexClass = classNames(`hex_${hex.id}`, `${hex.resource}`, "hex");
-                    const hexStyles = {
-                        strokeWidth: "25",
-                        stroke: "green",
-                        fill: hex.resource === "wheat" ? "tan" : 
-                            hex.resource === "brick" ? "red" :
-                            hex.resource === "wood" ? "brown" :
-                            hex.resource === "rock" ? "darkgray" : 
-                            hex.resource === "sheep" ? "white" : "yellow"
-                    }
-                    return(
-                        <Hexagon
-                            key={index}
-                            className={hexClass}
-                            hexProps={{class:`${hex.resource}`}}
-                            style={hexStyles}
-                            ></Hexagon>
-                    )
-                })}
-                {settlementList.map((settlement, index) => {
-                    const settleClass = classNames(`set_${settlement.id}`, `${settlement.color}`);
-                    return(
-                        <G.SettlementHouse
-                        key={index}
-                        className={settleClass}
-                        >
-
-                        </G.SettlementHouse>
+        <H.BodyContainer>
+            <Header />
+            <G.Div>
+                <G.StartButton onClick={() => setBoard()}>Set Board</G.StartButton>
+                <G.Board>
+                    {hexList.map((hex, index) => {
+                        const hexClass = classNames(`hex_${hex.id}`, `${hex.resource}`, "hex");
+                        const hexStyles = {
+                            strokeWidth: "25",
+                            stroke: "green",
+                            fill: hex.resource === "wheat" ? "tan" : 
+                                hex.resource === "brick" ? "red" :
+                                hex.resource === "wood" ? "brown" :
+                                hex.resource === "rock" ? "darkgray" : 
+                                hex.resource === "sheep" ? "white" : "yellow"
+                        }
+                        return(
+                            <Hexagon
+                                key={index}
+                                className={hexClass}
+                                hexProps={{class:`${hex.resource}`}}
+                                style={hexStyles}
+                                ></Hexagon>
                         )
-                })}
-
-                {roadList.map((road, index) => {
-                    const roadClass = classNames(`road_${road.id}`, `${road.owner.color}`);
-                    return(
-                        <G.RoadPiece
+                    })}
+                    {settlementList.map((settlement, index) => {
+                        const settleClass = classNames(`set_${settlement.id}`, `${settlement.color}`);
+                        return(
+                            <G.SettlementHouse
                             key={index}
-                            className={roadClass}
-                            ></G.RoadPiece>
-                    )
-                })}
+                            className={settleClass}
+                            >
 
-                {tokenList.map((token, index) => {
-                    const tokenClass = classNames(`token_${tokenIndex}`, "token")
-                    tokenIndex++;
-                    return(
-                        <G.NumberToken
-                            key={index}
-                            className={tokenClass}>
-                                {token}
-                        </G.NumberToken>
-                    )
-                })}
-                <G.NumberToken
-                    className={robberClass}
-                >
-                    {hexList[18] ? 
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/><path fillRule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path fillRule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/></svg>
-                :
-                ""
-                }
-                </G.NumberToken>
-                <G.DieHolder className="dieHolder">
-                    <G.Dice className="dice1">{diceSet[0]}</G.Dice>
-                    <G.Dice className="dice2">{diceSet[1]}</G.Dice>
-                    <G.Button className="roll" onClick={() => roll()}>Roll!</G.Button>
-                </G.DieHolder>
-            </G.Board>
-        </G.Div>
+                            </G.SettlementHouse>
+                            )
+                    })}
+
+                    {roadList.map((road, index) => {
+                        const roadClass = classNames(`road_${road.id}`, `${road.owner.color}`);
+                        return(
+                            <G.RoadPiece
+                                key={index}
+                                className={roadClass}
+                                ></G.RoadPiece>
+                        )
+                    })}
+
+                    {tokenList.map((token, index) => {
+                        const tokenClass = classNames(`token_${tokenIndex}`, "token")
+                        tokenIndex++;
+                        return(
+                            <G.NumberToken
+                                key={index}
+                                className={tokenClass}>
+                                    {token}
+                            </G.NumberToken>
+                        )
+                    })}
+                    <G.NumberToken
+                        className={robberClass}
+                    >
+                        {hexList[18] ? 
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/><path fillRule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path fillRule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/></svg>
+                    :
+                    ""
+                    }
+                    </G.NumberToken>
+                    <G.DieHolder className="dieHolder">
+                        <G.Dice className="dice1">{diceSet[0]}</G.Dice>
+                        <G.Dice className="dice2">{diceSet[1]}</G.Dice>
+                        <G.Button className="roll" onClick={() => roll()}>Roll!</G.Button>
+                    </G.DieHolder>
+                </G.Board>
+            </G.Div>
+        </H.BodyContainer>
+        
     )
 }
 
