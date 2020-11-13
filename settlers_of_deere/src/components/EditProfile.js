@@ -1,6 +1,6 @@
 import React, { useReducer, useState, useLayoutEffect } from "react";
 import { useSelector } from "react-redux";
-import { userProfileData, updateUser, updateProfile } from "../services/api_helper";
+import { userProfileData, updateUser, updateProfile, deleteUser } from "../services/api_helper";
 import { useHistory } from "react-router-dom";
 import * as L from "../styles/LandingPageStyles";
 import { currentUser, setCurrentUser } from "../features/gameMetaDataSlice";
@@ -50,7 +50,7 @@ const EditProfile = () => {
         }
     }
     
-    const HandleEdit = async (e, userData, profileData) => {
+    const HandleEdit = (e, userData, profileData) => {
         e.preventDefault();
         console.log("starting")
         updateUser(activeUser, userData);
@@ -58,6 +58,18 @@ const EditProfile = () => {
 
         console.log("We In")
         history.push("/profile") 
+    }
+
+    const HandleDelete = (e) => {
+        e.preventDefault();
+        localStorage.removeItem('authToken');
+        localStorage.removeItem("currentUserId");
+        localStorage.removeItem('jwt');
+        deleteUser(activeUser);
+        setTimeout(() => {
+            history.push("/")
+        }, 500)
+        
     }
     
     const [editUser, setEditUser] = useReducer(editReducer, {
@@ -74,7 +86,7 @@ const EditProfile = () => {
     return(
         <L.Div>
             <L.Modal>
-                <h1>Welcome back!</h1>
+                <h1>Edit Profile</h1>
                 <form onSubmit={(e) => HandleEdit(e, editUser, editProfile)}>
                     <input
                         type="text"
@@ -110,9 +122,9 @@ const EditProfile = () => {
                         onChange={e => setEditProfile({type: "BIO_CHANGED", payload: e.target.value})}
                         placeholder="Bio"
                     />
-
                     <input type="submit" value="Update" />
                 </form>
+                <button onClick={HandleDelete}>Delete Profile</button>
             </L.Modal>
         </L.Div>
     )

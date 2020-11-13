@@ -48,8 +48,15 @@ export const userProfileData = async (user) => {
 
 export const updateUser = async (user, userContent) => {
     const resp = await api.put(`/user/profile/${user.id}`, userContent)
+    return resp.data
 }
 
 export const updateProfile = async (user, profileContent) => {
     const resp = await api.put(`/profile/${user.id}`, profileContent);
+    return resp.data
+}
+
+export const deleteUser = async (user) => {
+    const resp = await api.delete(`/profile/${user.id}`)
+    return resp.data
 }
