@@ -30,15 +30,15 @@ const Profile = () => {
         const combines = profileData.userProfile.combines;
         let completionPCT;
         let winPCT;
-        let PPG;
+        let ppg;
         if(gamesFinished === 0 ) {
             completionPCT = 0;
             winPCT = 0;
-            PPG = 0;
+            ppg = 0;
         } else {
             completionPCT = (parseFloat(gamesFinished) / parseFloat(gamesStarted)) * 100;
             winPCT = (parseFloat(gamesWon) / parseFloat(gamesFinished)) * 100;
-            PPG = (parseFloat(points) / parseFloat(gamesFinished)) * 100;
+            ppg = (parseFloat(points) / parseFloat(gamesFinished)) * 100;
         }
 
         let gameStats = {
@@ -50,7 +50,7 @@ const Profile = () => {
             combines,
             completionPCT,
             winPCT,
-            PPG
+            ppg
         }
 
         return gameStats;
@@ -82,31 +82,31 @@ const Profile = () => {
                     <h2> {profileData.name}'s Stat Sheet </h2>
                     <P.StatsBox>
                         <P.StatLine>
-                            Games Started: {profileData.userProfile.gamesStarted}
+                            Games Started: {gameStats.gamesStarted}
                         </P.StatLine>
                         <P.StatLine>
-                            Games Finished: {profileData.userProfile.gamesFinished}
+                            Games Finished: {gameStats.gamesFinished}
                         </P.StatLine>
                         <P.StatLine>
-                            Completion PCT: {profileData.user}
+                            Completion PCT: {gameStats.completionPCT}
                         </P.StatLine>
                         <P.StatLine>
-                            Games Won:
+                            Games Won: {gameStats.gamesWon}
                         </P.StatLine>
                         <P.StatLine>
-                            Win PCT:
+                            Win PCT: {gameStats.winPCT}
                         </P.StatLine>
                         <P.StatLine>
-                            Points: 
+                            Points: {gameStats.points}
                         </P.StatLine>
                         <P.StatLine>
-                            Points Per Game:
+                            Points Per Game: {gameStats.ppg}
                         </P.StatLine>
                         <P.StatLine>
-                            Plows:
+                            Plows: {gameStats.plows}
                         </P.StatLine>
                         <P.StatLine>
-                            Combines:
+                            Combines: {gameStats.combines}
                         </P.StatLine>
                             
                             
