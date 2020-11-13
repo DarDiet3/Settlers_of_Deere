@@ -280,5 +280,8 @@ export const Dice = styled.div`
 export const Button = styled.button`
     width: 75%;
     height: 25%;
+`
 
+export const StartButton = styled.button`
+    height: 50px;
 `

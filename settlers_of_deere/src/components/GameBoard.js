@@ -7,6 +7,7 @@ import { settlements } from "../features/settlementNodeSlice";
 import { roads } from "../features/roadNodes";
 import { dice, tokens, resource_hexes, setDice, setTokens, setResourceHexes, rollDice } from "../features/gameMetaDataSlice";
 import { hexes, setHexData, setRobber } from "../features/hexSlice";
+import { StringDecoder } from "string_decoder";
 
 const GameBoard = () => {
     //State Variables
@@ -19,7 +20,25 @@ const GameBoard = () => {
     const diceSet = useSelector(dice);
 
     // Set up initial game states
-    useEffect(() => {
+    // useEffect(() => {
+    //     let newTokenList = [...tokenList];
+    //     newTokenList = shuffle(newTokenList);
+    //     let newResourceHexList = [...resourceHexList];
+    //     newResourceHexList = shuffle(newResourceHexList);
+    //     dispatch(setTokens(newTokenList));
+    //     dispatch(setResourceHexes(newResourceHexList));
+    //     for(let i=0; i < newTokenList.length; i++) {
+    //         let payload = {
+    //             index: i,
+    //             number: newTokenList[i],
+    //             resource: newResourceHexList[i]
+    //         }
+    //         dispatch(setHexData(payload))
+    //     }
+
+    // }, [])
+
+    const setBoard = () => {
         let newTokenList = [...tokenList];
         newTokenList = shuffle(newTokenList);
         let newResourceHexList = [...resourceHexList];
@@ -34,9 +53,7 @@ const GameBoard = () => {
             }
             dispatch(setHexData(payload))
         }
-
-    }, [])
-
+    }
 
     const shuffle = (arr) => {
         let oldArr = arr;
@@ -64,6 +81,7 @@ const GameBoard = () => {
  
     return(
         <G.Div>
+            <G.StartButton onClick={() => setBoard()}>Set Board</G.StartButton>
             <G.Board>
                 {hexList.map((hex, index) => {
                     const hexClass = classNames(`hex_${hex.id}`, `${hex.resource}`, "hex");

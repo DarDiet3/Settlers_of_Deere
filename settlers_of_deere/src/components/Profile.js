@@ -5,7 +5,7 @@ import * as P from "../styles/ProfileStyles";
 import { currentUser } from "../features/gameMetaDataSlice";
 import Header from "./Header";
 import EditProfile from "./EditProfile";
-import {  userProfileData } from "../services/api_helper";
+import { userProfileData } from "../services/api_helper";
 
 
 const Profile = () => {

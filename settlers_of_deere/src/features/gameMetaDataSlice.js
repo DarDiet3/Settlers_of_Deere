@@ -13,7 +13,7 @@ const currentUserId = () => {
 }
 
 const currentUserData = currentUserId();
-console.log(currentUserData)
+
 
 export const gameMetaDataSlice = createSlice({
     name: "gameMetaData",

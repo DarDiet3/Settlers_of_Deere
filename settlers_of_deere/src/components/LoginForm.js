@@ -24,7 +24,6 @@ const LoginForm = () => {
         e.preventDefault();
         const currentUser = await loginUser(loginData);
         dispatch(setCurrentUser(currentUser));
-        console.log("We In")
         history.push("/") 
     }
     

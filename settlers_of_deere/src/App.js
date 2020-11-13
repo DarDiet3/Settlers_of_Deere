@@ -1,5 +1,6 @@
 import { Redirect, Route, Switch } from 'react-router';
 import { useSelector, useDispatch} from 'react-redux';
+import { useHistory } from "react-router-dom";
 
 import {currentUser, setCurrentUser, gameData} from "./features/gameMetaDataSlice";
 import Gameboard from "./components/GameBoard";
@@ -12,11 +13,15 @@ import Profile from "./components/Profile";
 function App() {
   const activeUser = useSelector(currentUser);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const HandleLogout = () => {
     localStorage.removeItem('authToken');
     localStorage.removeItem("currentUserId");
     dispatch(setCurrentUser(""));
+    setTimeout(() => {
+      history.push("/")
+  }, 500)
 }
 
   return (
