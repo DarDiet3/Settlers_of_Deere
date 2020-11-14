@@ -43,4 +43,5 @@ export const H1 = styled.h1`
 
 export const BodyContainer = styled.div`
     width: 100vw;
+    height: 85vh;
 `

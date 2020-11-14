@@ -4,23 +4,37 @@ import styled from "styled-components";
 
 export const Div = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
-    height: 85vh;
+    height: 90vh;
     background: gray;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     
 `
 
+export const Table = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 98%;
+    width: 55%;
+    background: #2F3D41;
+`
+
 export const Board = styled.div`
+    padding: 25px;
     display: grid;
-    width: 525px;
-    height: 480px;
+    min-width: 525px;
+    min-height: 480px;
+    width: 650px;
+    height: 594px;
     grid-template-columns: repeat(21, minmax(0, 2.25%));
     grid-template-rows: repeat(33, minmax(0, 2.25%));
     gap: .875% 2.75%;
     background: lightblue;
+    box-shadow: 0px 0px 5px navy;
+    border-radius: 25px;
     
 
     & .set_1, .set_2, .set3 {
@@ -229,6 +243,28 @@ export const Board = styled.div`
         grid-row: 2 / span 5;
         grid-column: 1 / span 4;
     }
+`
+
+export const PlayerArea = styled.div`
+    width: 30%;
+    height: 98%;
+    border: solid black 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+`
+export const Opponent = styled.div`
+    width:100%;
+    height: 40%;
+    background: white;
+    border: solid red 1px;
+`
+
+export const UserInventory = styled.div`
+    width: 100%;
+    height: 55%;
+    background: white;
+    border: solid purple 1px;
 `
 
 export const SettlementHouse = styled.div`

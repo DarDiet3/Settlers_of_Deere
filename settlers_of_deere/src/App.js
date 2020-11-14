@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import {currentUser, setCurrentUser, gameData} from "./features/gameMetaDataSlice";
 import Gameboard from "./components/GameBoard";
 import SignupForm from "./components/SignUpForm"; 
+import Lobby from "./components/Lobby";
 import LoginForm from "./components/LoginForm";
 import LandingPage from './components/LandingPage';
 import Profile from "./components/Profile";
@@ -30,7 +31,8 @@ function App() {
       {/* <button onClick={HandleLogout}>LogOut</button> */}
       {activeUser ? 
         <Switch>
-          <Route exact path="/" component={Gameboard}/>
+          <Route exact path="/" component={Lobby}/>
+          <Route path="/game" component={Gameboard}/>
           <Route path="/profile" component={Profile}/>
         </Switch>
         
