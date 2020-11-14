@@ -4,7 +4,7 @@ export const Header = styled.header`
     height: 10vh;
     width: 100vw;
     margin: 0;
-    background: #555555;
+    background: #367C2B;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,11 +16,12 @@ export const NavButton = styled.div`
     width: 50px;
     height: 15px;
     padding: 10px;
-    background: #367C2B;
+    background: #555555;
     border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: solid 2px black;
     & a {
         text-decoration: none;
         font-family: arial;

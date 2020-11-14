@@ -7,7 +7,7 @@ export const Div = styled.div`
     flex-direction: row;
     width: 100%;
     height: 90vh;
-    background: gray;
+    background: #d5d5d5;
     align-items: center;
     justify-content: space-around;
     
@@ -254,10 +254,15 @@ export const PlayerArea = styled.div`
     justify-content: space-between;
 `
 export const Opponent = styled.div`
-    width:100%;
+    width: 98%;
     height: 40%;
     background: white;
     border: solid red 1px;
+    padding: 5px;  
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+    justify-content: space-between;
 `
 
 export const UserInventory = styled.div`

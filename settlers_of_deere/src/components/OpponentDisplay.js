@@ -7,17 +7,17 @@ function OpponentDisplay(props) {
 
     return(
         <A.OpponentRow>
-            <A.OpponentName>{player.username}</A.OpponentName>
+            <A.OpponentName className={player.color}>{player.username}</A.OpponentName>
             <A.OppCardHolder>
                 <A.OppCardCol>
-                    {player.specialCards}
+                    {player.specialCards.length !== 0 ? player.specialCards : "No extra VP"}
                 </A.OppCardCol>
                 <A.Vp>
-                    Victory Points <br/>
-                    {player.points}
+                    <p>Victory Points</p>
+                    <A.Points>{player.points}</A.Points>
                 </A.Vp>
                 <A.OppCardCol>
-                    {player.devCards}
+                    {player.devCards.length !== 0 ? player.devCards : "No Dev Cards Played"}
                 </A.OppCardCol>
             </A.OppCardHolder>
         </A.OpponentRow>
