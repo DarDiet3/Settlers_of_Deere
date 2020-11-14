@@ -7,6 +7,7 @@ import * as G from "../styles/GameBoardStyles";
 import * as H from "../styles/GeneralStyles";
 import Header from "./Header";
 import OpponentDisplay from "./OpponentDisplay";
+import UserInventory from "./UserInventory";
 
 import { settlements } from "../features/settlementNodeSlice";
 import { roads } from "../features/roadNodes";
@@ -27,8 +28,8 @@ const GameBoard = () => {
     const activeUser = useSelector(currentUser);
     const playerList = useSelector(players);
     const opponents = playerList.filter(n=> n.username !== activeUser.username)
-    console.log(playerList)
-    console.log(opponents)
+    const activeplayer = playerList.filter(n => n.username === activeUser.username)
+    console.log(activeplayer)
 
     const setBoard = () => {
         let newTokenList = [...tokenList];
@@ -154,7 +155,7 @@ const GameBoard = () => {
                         })}
                     </G.Opponent>
                     <G.UserInventory>
-
+                        <UserInventory player={activeplayer[0]}/>
                     </G.UserInventory>
                 </G.PlayerArea>
             </G.Div>

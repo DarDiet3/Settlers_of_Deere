@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import * as A from "../styles/PlayerAreaStyles";
 
 function OpponentDisplay(props) {
