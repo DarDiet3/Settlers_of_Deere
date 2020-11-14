@@ -1,26 +1,40 @@
-import Hexagon from "react-hexagon";
 import styled from "styled-components";
 
 
 
 export const Div = styled.div`
     display: flex;
+    flex-direction: row;
     width: 100%;
-    height: 85vh;
-    background: gray;
+    height: 90vh;
+    background: #d5d5d5;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     
 `
 
+export const Table = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 98%;
+    width: 55%;
+    background: #2F3D41;
+`
+
 export const Board = styled.div`
+    padding: 25px;
     display: grid;
-    width: 525px;
-    height: 480px;
+    min-width: 525px;
+    min-height: 480px;
+    width: 650px;
+    height: 594px;
     grid-template-columns: repeat(21, minmax(0, 2.25%));
     grid-template-rows: repeat(33, minmax(0, 2.25%));
     gap: .875% 2.75%;
     background: lightblue;
+    box-shadow: 0px 0px 5px navy;
+    border-radius: 25px;
     
 
     & .set_1, .set_2, .set3 {
@@ -231,6 +245,33 @@ export const Board = styled.div`
     }
 `
 
+export const PlayerArea = styled.div`
+    width: 30%;
+    height: 98%;
+    border: solid black 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+`
+export const Opponent = styled.div`
+    width: 98%;
+    height: 40%;
+    background: white;
+    border: solid red 1px;
+    padding: 5px;  
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+    justify-content: space-between;
+`
+
+export const UserInventory = styled.div`
+    width: 100%;
+    height: 55%;
+    background: white;
+    border: solid purple 1px;
+`
+
 export const SettlementHouse = styled.div`
     border: solid black 1px;
     width: 100%;
@@ -266,6 +307,7 @@ export const DieHolder = styled.div`
 
 
 `
+
 export const Dice = styled.div`
     display: flex;
     width: 25px;
@@ -280,5 +322,8 @@ export const Dice = styled.div`
 export const Button = styled.button`
     width: 75%;
     height: 25%;
+`
 
+export const StartButton = styled.button`
+    height: 50px;
 `

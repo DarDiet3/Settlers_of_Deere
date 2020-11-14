@@ -5,7 +5,7 @@ import * as P from "../styles/ProfileStyles";
 import { currentUser } from "../features/gameMetaDataSlice";
 import Header from "./Header";
 import EditProfile from "./EditProfile";
-import {  userProfileData } from "../services/api_helper";
+import { userProfileData } from "../services/api_helper";
 
 
 const Profile = () => {
@@ -66,9 +66,9 @@ const Profile = () => {
 
     return (
         profileData.userProfile ? 
-        <div>
+        <P.BodyContainer>
             <Route exact path="/profile" render={() => (
-                <div>
+                <P.BodyContainer>
                 <Header/>
                     <P.Div>
                         <P.SubBox>
@@ -116,11 +116,11 @@ const Profile = () => {
                         </P.SubBox>
                         
                     </P.Div>
-                </div>
+                </P.BodyContainer>
                 
             )} />
             <Route path="/profile/edit" component={EditProfile}/>
-        </div> 
+        </P.BodyContainer> 
         :
         <div></div>
     )

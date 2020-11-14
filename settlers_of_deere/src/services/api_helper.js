@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-    // baseURL:  "https://settlers-of-deere.herokuapp.com",
-    baseURL: "http://localhost:3001"
+    baseURL:  "https://settlers-of-deere.herokuapp.com",
+    // baseURL: "http://localhost:3001"
 })
 
 // ===== AUTH ======

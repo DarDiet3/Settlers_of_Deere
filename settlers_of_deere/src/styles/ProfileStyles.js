@@ -46,3 +46,7 @@ export const StatsBox = styled.div`
 export const StatLine = styled.div`
     width: 100%;
 `
+
+export const BodyContainer = styled.div`
+    width: 100vw;
+`

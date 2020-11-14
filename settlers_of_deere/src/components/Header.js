@@ -10,6 +10,7 @@ const Header = () => {
     const activeUser = useSelector(currentUser);
     return (
         <H.Header>
+            <H.H1>Settlers of Deere</H.H1>
             <H.NavBar>
                 <H.NavButton>
                     <Link to="/">
@@ -18,7 +19,7 @@ const Header = () => {
                     </Link>
                 </H.NavButton>
                 <H.NavButton>
-                    <Link to="/profile/"></Link>
+                    <Link to="/profile">Profile</Link>
                 </H.NavButton>
             </H.NavBar>
             
