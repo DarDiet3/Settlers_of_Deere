@@ -7,7 +7,7 @@ export const playerSlice = createSlice({
             {
                 player: 1,
                 color: "red",
-                username: null,
+                username: "pork",
                 cards: {
                     brick: 0,
                     wood: 0,
@@ -21,12 +21,15 @@ export const playerSlice = createSlice({
                 cities_unplayed: 4,
                 cities_played: 0,
                 roads_unplayed: 15,
-                roads_played: 0
+                roads_played: 0,
+                devCards: [],
+                points: 0,
+                specialCards: []
             },
             {
                 player: 2,
                 color: "blue",
-                username: null,
+                username: "Player 2",
                 cards: {
                     brick: 0,
                     wood: 0,
@@ -40,12 +43,15 @@ export const playerSlice = createSlice({
                 cities_unplayed: 4,
                 cities_played: 0,
                 roads_unplayed: 15,
-                roads_played: 0
+                roads_played: 0,
+                devCards: [],
+                points: 0,
+                specialCards: []
             }, 
             {
                 player: 3,
                 color: "orange",
-                username: null,
+                username: "Player 3",
                 cards: {
                     brick: 0,
                     wood: 0,
@@ -59,12 +65,15 @@ export const playerSlice = createSlice({
                 cities_unplayed: 4,
                 cities_played: 0,
                 roads_unplayed: 15,
-                roads_played: 0
+                roads_played: 0,
+                devCards: [],
+                points: 0,
+                specialCards: []
             }, 
             {
                 player: 4,
                 color: "white",
-                username: null,
+                username: "Player 4",
                 cards: {
                     brick: 0,
                     wood: 0,
@@ -78,7 +87,10 @@ export const playerSlice = createSlice({
                 cities_unplayed: 4,
                 cities_played: 0,
                 roads_unplayed: 15,
-                roads_played: 0
+                roads_played: 0,
+                devCards: [],
+                points: 0,
+                specialCards: []
             }
         ]
     },
@@ -87,6 +99,6 @@ export const playerSlice = createSlice({
     }
 })
 
-export const players = state => state.playes.players;
+export const players = state => state.players.players;
 
 export default playerSlice.reducer;
