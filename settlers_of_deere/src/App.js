@@ -3,7 +3,7 @@ import { useSelector, useDispatch} from 'react-redux';
 import { useHistory } from "react-router-dom";
 
 import {currentUser, setCurrentUser, gameData} from "./features/gameMetaDataSlice";
-import Gameboard from "./components/GameBoard";
+import GamePlayPage from "./components/GamePlayPage";
 import SignupForm from "./components/SignUpForm"; 
 import Lobby from "./components/Lobby";
 import LoginForm from "./components/LoginForm";
@@ -32,7 +32,7 @@ function App() {
       {activeUser ? 
         <Switch>
           <Route exact path="/" component={Lobby}/>
-          <Route path="/game" component={Gameboard}/>
+          <Route path="/game" component={GamePlayPage}/>
           <Route path="/profile" component={Profile}/>
         </Switch>
         

@@ -43,7 +43,7 @@ export const gameMetaDataSlice = createSlice({
     }
 })
 
-export const { setDice, setTokens, setResourceHexes, rollDice, setCurrentUser } = gameMetaDataSlice.actions;
+export const { setDice, setTokens, setResourceHexes, setCurrentUser } = gameMetaDataSlice.actions;
 
 export const dice = state => state.gameData.dice;
 export const tokens = state => state.gameData.number_tokens;

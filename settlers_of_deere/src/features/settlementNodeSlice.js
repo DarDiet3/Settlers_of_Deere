@@ -25,7 +25,7 @@ export const settlementNodeSlice = createSlice({
             {
                 id: 3,
                 owner: null,
-                type: null,
+                resource: null,
                 port: null,
                 canBuild: [],
                 roads: [5, 6],
